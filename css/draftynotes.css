@@ -1,0 +1,146 @@
+ @font-face
+      {
+      	font-family:dn-seriously;
+      	src:url("../css/fonts/seriously.ttf");
+      }
+@font-face
+      {
+      	font-family:dn-default;
+      	src:url("../css/fonts/handsean.ttf");
+      }
+@font-face
+      {
+      	font-family:dn-swagger;
+      	src:url("../css/fonts/Swagger.ttf");
+      }
+@font-face
+      {
+      	font-family:dn-zamsley;
+      	src:url("../css/fonts/Zamsley.ttf");
+      }
+      
+.brand-custom{
+		font-family: dn-default;
+}
+
+.note-main {
+	background-image: url('../img/notepad.png');
+	width: 687px;
+	height: 625px;
+}
+.note-header {
+	border:none;
+	resize:none;
+	width: 621px;
+		font-family: dn-default;
+		font-size: 28px;
+	padding-top: 20px;
+	margin-top:5px;
+	margin-right: 15px;
+	font-weight: bold;
+	margin-left: 48px;
+	background:transparent;
+	color:#000000;
+}
+.note-body {
+	border:none;
+		resize:none;
+		width: 621px;
+			font-family: dn-default;
+			background-color:transparent;
+			color:#000000;
+	
+		font-size: 20px;
+	line-height: 150%;
+	margin-left: 48px;
+	margin-top: 10px;
+	height: 487px;
+	overflow: auto;
+}
+
+
+
+.show-pads-node{
+		padding: 10px;
+		border-bottom: 1px solid #eee;
+}
+.show-pads-node:hover{
+	background-color: #FAF2CC;
+
+}
+
+.shortern-note-name{
+	overflow: hidden;
+text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+white-space: nowrap;
+width: 122px;
+}
+
+.show-notes-node{
+	overflow: hidden;
+text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+white-space: nowrap;
+	
+	
+			padding: 10px;
+		border-bottom: 1px solid #eee;
+}
+.show-notes-node:hover{
+		background-color: #FAF2CC;
+}
+
+.notes-list{
+	height: 552px;
+	overflow: auto;
+}
+.tasks-list{
+	height: 552px;
+	overflow: auto;
+}
+
+.show-tasks-node{
+				padding: 10px;
+		border-bottom: 1px solid #eee;
+}
+
+.show-tasks-node:hover{
+			background-color: #FAF2CC;
+}
+
+.note-list-container{
+	background:url('../img/bg.png');
+	
+	position: absolute;
+			height: 623px;
+}
+#note-list-body{
+	float: left;
+	height: 100%;
+}
+#note-list-controller{
+background:url('../img/notes-slider.jpg');
+height:100%;
+	float: right;
+	color:#FFFFFF;
+	width: 40px;
+	
+	
+
+}
+.navbar{
+	background:#000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+

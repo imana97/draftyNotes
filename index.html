@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Drafty Notes</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Drafty Notes is a simple notepad and a task manager all in one page. Works offline and online on all modern browsers">
+		<meta name="author" content="Iman Khaghani Far">
+		<!-- Le styles -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<style>
+			body {
+				padding-top: 60px; /* 60px to make the container go all the way
+				 to the bottom of the topbar */
+			}
+		</style>
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="css/jquery/start/jquery-ui-1.9.2.custom.min.css" rel="stylesheet">
+		<link href="css/draftynotes.css" rel="stylesheet">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+		</script>
+		<![endif]-->
+		<!-- Le fav and touch icons -->
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+		<script src="lib/jquery-1.8.2.min.js"></script>
+		<script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
+
+		<script src="lib/bootstrap.min.js"></script>
+		<script src="draftynotes.js"></script>
+		<script src="viewupdater.js"></script>
+		<script src="controller.js"></script>
+
+	</head>
+
+	<body>
+		<div class="navbar navbar-fixed-top navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="brand brand-custom" href="#"> Drafty Notes <font size="2" color="yellow">Beta</font></a>
+					<ul class="nav">
+						<li>
+							<a id="myPadsBtn" href="#myPadsModal" data-toggle="modal">My Pads</a>
+						</li>
+						<li>
+							<a href="#">Settings</a>
+						</li>
+						<li>
+							<a href="#">About</a>
+						</li>
+					</ul>
+					<div class="navbar-text" style="font-weight: bold;">
+						| <span class="img-circle badge-success" style="padding: 4px; 4px; 4px; 4px; color: white;">Offline</span>
+						| <span class="text-warning">Current pad: <span id="current-pad"></span></span>
+						<!--<span class="pull-right"><a href="#"><img src="img/googleLoginBtn.png" /></a></span>-->
+						<button id="sync-data" class="btn btn-danger pull-right">
+							Sync with Google Drive
+						</button>
+						<div class="pull-right" style="width: 100px; height:20px; margin-top: 10px; margin-right: 5px; margin-left: 5px; float: right" id="progressbar"></div>
+						<span class="text-info pull-right" id="currentTime">Used space:(<span id="used-space"></span>%)</span>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="note-list-container">
+				<div id="note-list-body">
+					<button class="btn btn-primary span2" id="btn-add-note">
+						<i class="icon-plus icon-white"></i> New note
+					</button>
+					<br>
+					<br>
+					<div>
+						<input type="text" id="txt-filter-notes" placeholder="Filter notes" />
+					</div>
+					<div class="tab-pane notes-list" id="notes-list"></div>
+				</div>
+				<div id="note-list-controller">
+					
+				</div>
+
+			</div>
+		
+		
+		<div class="container-fluid">
+			
+			<div class="span7">
+				<div id="note-container" class="note-main">
+					<textarea type="text" maxlength="35" class="note-header" id="note-header" placeholder="Insert Header Hear..."></textarea>
+					<textarea class="note-body" id="note-body" placeholder="Insert body here..."></textarea>
+				</div>
+			</div>
+			<div class="span3" style="height: 625px;">
+				<div align="center">
+					<button class="btn btn-success span2" id="addTaskBtn">
+						<i class="icon-plus icon-white"></i> New task
+					</button>
+				</div>
+				<hr>
+				<div class="tab-pane tasks-list" id="notes-list">
+					<div class="show-tasks-node">
+						<a href="#">First Task</a>
+					</div>
+				</div>
+			</div>
+			<div class="span2">
+				sound recorder
+			</div>
+
+		</div>
+
+		<!-- modals-->
+		<div class="modal hide fade" id="myPadsModal">
+			<div class="modal-header" style="background-color: #EEEEEE">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h3>My Pads</h3>
+			</div>
+			<div class="modal-body">
+
+				<div class="tab-pane" id="show-pads"></div>
+
+			</div>
+			<div class="modal-body" style="background-color: #EEEEEE">
+				<div class="input-append">
+					<input type="text" id="txt-newPadName" maxlength="30" class="span4" placeholder="Insert a name for your pad" />
+					<button class="btn btn-primary" id="btn-createPad">
+						<i class="icon-plus"></i> Create a new pad
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		Please Wait...
+		<script type="text/javascript">
+            var hashdata = new Object();
+            /*
+            jQuery.each(window.location.hash.replace(/^#/, '').split('&'), function(i, t) {
+                var s = t.split('=');
+                hashdata[s[0]] = s[1];
+            });
+            */
+            var hashArray=window.location.hash.replace(/^#/, '').split('&');
+            for (var i in hashArray){
+            	var s=hashArray[i].split('=');
+            	hashdata[s[0]] = s[1];
+            }
+            
+            localStorage.googleToken=hashdata.access_token;
+            window.location="index.html";
+
+		</script>
+	</body>
+
+</html>
